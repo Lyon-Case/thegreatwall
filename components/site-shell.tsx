@@ -10,6 +10,7 @@ const links = [
   { href: '/eat-drink', label: 'Eat + Drink' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
+  { href: '/reservations', label: 'Reservations' },
 ]
 
 export function SiteHeader() {
