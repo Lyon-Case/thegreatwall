@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Menu, Ticket, X, Zap } from 'lucide-react'
+import { Menu, Ticket, X } from 'lucide-react'
 import { useState } from 'react'
 
 const links = [
@@ -17,7 +17,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <div className="signal-bar"><span><Zap size={12} /> GABORONE / 24.6557° S, 25.9088° E</span><span className="signal-status">SYSTEM ONLINE · OPEN UNTIL LATE</span></div>
     <header className="site-header">
       <Link href="/" className="wordmark" onClick={() => setOpen(false)}><span>THE</span><strong>GREAT WALL</strong><span>BOTSWANA / 001</span></Link>
       <nav id="primary-navigation" className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
