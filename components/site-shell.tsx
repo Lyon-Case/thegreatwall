@@ -16,12 +16,13 @@ const links = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   return <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
     <div className="signal-bar"><span><Zap size={12} /> GABORONE / 24.6557° S, 25.9088° E</span><span className="signal-status">SYSTEM ONLINE · OPEN UNTIL LATE</span></div>
     <header className="site-header">
       <Link href="/" className="wordmark" onClick={() => setOpen(false)}><span>THE</span><strong>GREAT WALL</strong><span>BOTSWANA / 001</span></Link>
-      <nav className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
+      <nav id="primary-navigation" className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
       <Link href="/tickets" className="header-ticket"><Ticket size={16} /> Get Tickets</Link>
-      <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
+      <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </header>
   </>
 }
@@ -31,7 +32,7 @@ export function SiteFooter() {
 }
 
 export function PageShell({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <main className={`site-frame ${className}`}><SiteHeader />{children}<SiteFooter /></main>
+  return <div className={`site-frame ${className}`}><SiteHeader /><main id="main-content">{children}</main><SiteFooter /></div>
 }
 
 export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: React.ReactNode; copy: string }) {
