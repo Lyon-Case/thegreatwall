@@ -18,7 +18,7 @@ export function SiteHeader() {
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className="site-header">
-      <Link href="/" className="wordmark" onClick={() => setOpen(false)}><span>THE</span><strong>GREAT WALL</strong><span>BOTSWANA / 001</span></Link>
+      <Link href="/" className="wordmark" onClick={() => setOpen(false)}><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2010%2C%202026%2C%2002_28_27%20PM-PH4h09O67nUWonM6STDTRYSQMaaQ1X.png" alt="The Great Wall" /><span>BOTSWANA / 001</span></Link>
       <nav id="primary-navigation" className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav>
       <Link href="/tickets" className="header-ticket"><Ticket size={16} /> Get Tickets</Link>
       <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
