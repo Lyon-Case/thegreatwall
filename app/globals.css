@@ -346,6 +346,8 @@ main { width: 100%; overflow: hidden; }
 .home-hero.event-hero::before { animation: hero-fire-natural 2.15s ease-in-out infinite !important; }
 .event-hero .hero-grid::before { animation: hero-smoke-natural 7.2s ease-in-out infinite !important; }
 /* Strong visible motion: flame tongues and smoke clouds read clearly in the hero. */
+/* Final landing hero image visibility: let the flyer artwork read through the atmosphere. */
+.home-hero.event-hero .hero-flyer-bg { opacity: .72 !important; filter: blur(10px) saturate(1.05) contrast(1.04) !important; }.home-hero.event-hero .hero-flyer-overlay { opacity: .12 !important; background: linear-gradient(90deg, rgba(7,10,14,.72) 0%, rgba(7,10,14,.38) 46%, rgba(7,10,14,.2) 100%) !important; }
 @keyframes hero-fire-visible { 0%, 100% { transform: skewX(-2deg) scaleY(.88) translateY(12px); background-position: 0 12%, 18% 100%, 38% 90%, 58% 100%, 78% 90%; } 50% { transform: skewX(3deg) scaleY(1.12) translateY(-18px); background-position: 8% -8%, 12% 82%, 45% 72%, 52% 86%, 86% 70%; } }
 /* Final override: visibly match the reserve panel to the hero and reduce it. */
 .reservation-callout { width: min(80vw, 1080px) !important; min-height: 184px !important; margin: 28px auto 78px !important; padding: 34px 42px !important; transform: scale(.93) !important; position: relative !important; overflow: hidden !important; background: #080b10 !important; }
