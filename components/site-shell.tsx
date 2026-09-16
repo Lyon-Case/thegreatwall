@@ -25,7 +25,7 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  return <footer className="footer"><div><Link href="/" className="wordmark footer-mark"><span>THE</span><strong>GREAT WALL</strong><span>BOTSWANA / 001</span></Link><p>Culture, connection and good times in Gaborone.</p></div><div className="footer-links"><Link href="/contact">Contact</Link><Link href="/gallery">Instagram</Link><Link href="/tickets">Tickets</Link></div><span className="footer-code">© 2026 / TGW_BW</span></footer>
+  return <footer className="footer"><div className="footer-intro"><Link href="/" className="wordmark footer-mark"><span>THE</span><strong>GREAT WALL</strong><span>BOTSWANA / 001</span></Link><p>Culture, connection and good times in Gaborone.</p></div><div className="footer-services"><span>What we do</span><Link href="/eat-drink">Dining & cocktails</Link><Link href="/whats-on">Live events</Link><Link href="/reservations">Private reservations</Link><Link href="/venue">Venue hire</Link><Link href="/gallery">Creative gatherings</Link></div><div className="footer-links"><Link href="/contact">Contact</Link><Link href="/gallery">Instagram</Link><Link href="/tickets">Tickets</Link></div><span className="footer-code">© 2026 / TGW_BW</span></footer>
 }
 
 export function PageShell({ children, className = '' }: { children: React.ReactNode; className?: string }) {
