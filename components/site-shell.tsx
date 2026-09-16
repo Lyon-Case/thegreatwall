@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { whatsappUrl } from '@/lib/whatsapp'
 
 const links = [
   { href: '/venue', label: 'The Venue' },
@@ -18,7 +19,7 @@ export function SiteHeader() {
   return <>
     <header className="site-header">
       <Link href="/" className="wordmark" onClick={() => setOpen(false)}><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2010%2C%202026%2C%2002_28_27%20PM-PH4h09O67nUWonM6STDTRYSQMaaQ1X.png" alt="The Great Wall" /><span className="wordmark-name">THE GREAT WALL</span></Link>
-      <div className="nav-cluster"><nav id="primary-navigation" className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav><a className="whatsapp-link" href="https://wa.me/26772160763" target="_blank" rel="noreferrer">WhatsApp</a></div>
+      <div className="nav-cluster"><nav id="primary-navigation" className={`nav ${open ? 'nav-open' : ''}`} aria-label="Primary navigation">{links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}</nav><a className="whatsapp-link" href={whatsappUrl('Hello The Great Wall, I have a general enquiry. Please assist me.')} target="_blank" rel="noreferrer">WhatsApp</a></div>
       <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </header>
   </>
