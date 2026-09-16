@@ -6,12 +6,12 @@ import { FuturisticButton, PageShell, SectionLabel } from '@/components/site-she
 
 const flyer = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/800260202_1401414058603493_4139769316431579680_n-TGbetx6Rv1sG3EQWokIkL10OgU99h2.jpeg'
 const gallery = [
-  ['/archive-arrival.png','Bokomoso tables'],
-  ['/archive-table.png','Arrival energy'],
-  ['/archive-entrance.png','The table is set'],
-  ['/archive-crowd.png','Make an entrance'],
-  ['/archive-wall.png','The wings'],
-  ['/archive-dance.png','Together at the Wall'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/812612001_858277367275914_1957481474940841552_n-o1pB74WIyLltwYWDrceIMxXDynwPMx.jpeg','Arrival at the Wall'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/808158477_4134476720185769_2967240675897664789_n-Kx4X2yWw9gGIKwh7nXEu5WYWOSIkLU.jpeg','Good food, good people'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/808240194_1637457201452607_1076833635635098086_n-f2wwBsCRcQiIGEpb4rLf2fDo1RQrNR.jpeg','After dark at the Wall'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/808462279_1787717999034364_6835154398250071767_n-5xiLihjLGRn8SB7qFdsRcH8EUoQVf4.jpeg','Gather around'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/808462605_1003318529387990_1481338571041257208_n-zWroVqBdXtyhVGAonOVk0vsKS9E4qx.jpeg','The table is set'],
+  ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/808763917_1367200268816142_6625987732717766916_n-OfoMYarFQg5tAlIRhcwLIybmGouMgr.jpeg','The Great Wall grounds'],
 ]
 const deadline = new Date('2026-09-19T18:00:00+02:00').getTime()
 function Countdown() { const [left, setLeft] = useState(0); const [replacement, setReplacement] = useState(''); const [ready, setReady] = useState(false); useEffect(() => { const stored = window.localStorage.getItem('tgw-schedule'); if (stored) { try { setReplacement(JSON.parse(stored).replacementImage || '') } catch { setReplacement('') } } const update = () => setLeft(deadline - Date.now()); update(); setReady(true); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer) }, []); if (!ready) return <div className="countdown" aria-label="Countdown to The Wall's Finest"><span><strong>--</strong> DAYS</span><span><strong>--</strong> HRS</span><span><strong>--</strong> MIN</span><span><strong>--</strong> SEC</span></div>; if (left <= 0) return replacement ? <img className="countdown-replacement" src={replacement} alt="Scheduled event artwork" /> : <div className="countdown-expired"><span>NOW PLAYING</span><strong>THE WALL IS LIVE</strong></div>; const days = Math.floor(left / 86400000), hours = Math.floor(left / 3600000) % 24, minutes = Math.floor(left / 60000) % 60, seconds = Math.floor(left / 1000) % 60; return <div className="countdown" aria-label="Countdown to The Wall's Finest"><span><strong>{String(days).padStart(2,'0')}</strong> DAYS</span><span><strong>{String(hours).padStart(2,'0')}</strong> HRS</span><span><strong>{String(minutes).padStart(2,'0')}</strong> MIN</span><span><strong>{String(seconds).padStart(2,'0')}</strong> SEC</span></div> }
