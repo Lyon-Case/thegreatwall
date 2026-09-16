@@ -52,6 +52,18 @@
 .nav { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; }
 @media (max-width: 1100px) and (min-width: 761px) { .home-hero.event-hero { padding-right: 235px; }.event-hero .hero-flyer-card { right: 110px; } }
 @media (max-width: 760px) { .home-hero.event-hero { min-height: 850px; padding: 112px 7% 90px; align-items: flex-end; }.event-hero .home-hero-content { padding-top: 185px; }.event-hero .hero-flyer-card { top: 88px; right: 6%; width: 156px; }.event-hero .flyer-card-title { font-size: 17px; }.event-hero .flyer-card-countdown .countdown strong { font-size: 13px; }.event-hero .flyer-card-cta { font-size: 7px; padding: 6px; } }
+/* Final alignment: transparent navigation over a full-bleed hero. */
+.site-header { position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; z-index: 20 !important; height: 82px !important; min-height: 82px !important; padding: 16px clamp(24px, 5vw, 72px) !important; background: transparent !important; border: 0 !important; box-shadow: none !important; backdrop-filter: none !important; }
+.nav { background: transparent !important; border: 0 !important; box-shadow: none !important; backdrop-filter: none !important; }
+.nav a { color: rgba(237,247,245,.82); text-shadow: 0 2px 14px rgba(0,0,0,.65); }
+.nav a:hover, .nav a:focus-visible { background: rgba(255,255,255,.1); color: var(--foreground); }
+.home-hero.event-hero { min-height: 820px; padding-top: 190px; padding-bottom: 120px; }
+.event-hero .hero-flyer-card { top: 145px !important; right: clamp(170px, 20vw, 300px) !important; width: 300px !important; }
+.event-hero .flyer-card-image { aspect-ratio: 1 / 1; }
+.event-hero .flyer-card-title { font-size: 23px; }
+.event-hero .flyer-card-countdown { margin-top: 12px; }
+@media (max-width: 1100px) and (min-width: 761px) { .event-hero .hero-flyer-card { right: 110px; } }
+@media (max-width: 760px) { .site-header { height: 70px; min-height: 70px; padding: 11px 6%; background: transparent; }.nav { background: rgba(8,16,26,.94); border: 1px solid rgba(118,247,219,.2); box-shadow: 0 20px 40px rgba(0,0,0,.3); backdrop-filter: blur(18px); }.home-hero.event-hero { padding-top: 125px; }.event-hero .hero-flyer-card { top: 88px; right: 6%; width: 190px; } }
 /* Final navigation layer, kept last so the desktop pill cannot be overridden by legacy rail rules. */
 .site-header { position: fixed; top: 0; right: 0; left: 0; transform: none; width: auto; min-height: 82px; height: 82px; padding: 16px clamp(24px, 5vw, 72px); flex-direction: row; align-items: center; border: 0; border-bottom: 1px solid rgba(255,255,255,.08); border-radius: 0; background: linear-gradient(180deg, rgba(5,10,17,.86), rgba(5,10,17,.18)); box-shadow: none; }
 .site-header::before { display: none; }.wordmark { flex: 0 0 auto; width: 128px; height: 48px; padding: 0; border: 0; align-items: flex-start; justify-content: center; overflow: hidden; }.wordmark img { width: 112px; height: 52px; object-fit: cover; object-position: center 30%; border-radius: 0; }.wordmark > span:last-child { display: none; }.nav { position: absolute; left: 50%; top: auto; right: auto; transform: translateX(-50%); display: flex; flex-direction: row; align-items: center; gap: 0; margin: 0; padding: 5px; border: 1px solid rgba(180,220,230,.2); border-radius: 999px; background: rgba(12,24,38,.62); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 12px 36px rgba(0,0,0,.22); backdrop-filter: blur(18px) saturate(140%); white-space: nowrap; }.nav a { padding: 10px 15px; border-radius: 999px; }.nav a::before { display: none; }.header-ticket { width: auto; padding: 13px 20px; border: 0; border-radius: 999px; background: var(--cyan); color: var(--ink); }.menu-button { display: none; }
